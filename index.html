@@ -1,0 +1,87 @@
+ (cd "$(git rev-parse --show-toplevel)" && git apply --3way <<'EOF' 
+diff --git a/index.html b/index.html
+new file mode 100644
+index 0000000000000000000000000000000000000000..67de1b1fc6dd0a066dcfcee0b9d8d767d1433bc8
+--- /dev/null
++++ b/index.html
+@@ -0,0 +1,77 @@
++<!doctype html>
++<html lang="en">
++<head>
++  <meta charset="UTF-8" />
++  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
++  <title>Oracle (ORCL) Stock Briefing</title>
++  <link rel="stylesheet" href="styles.css" />
++</head>
++<body>
++  <header class="hero">
++    <h1>Oracle (NYSE: ORCL) Stock Briefing</h1>
++    <p>Recent business events, what they may mean for investors, and market context.</p>
++  </header>
++
++  <main>
++    <section class="card">
++      <h2>Quick Snapshot</h2>
++      <ul>
++        <li>Oracle is increasingly a cloud and infrastructure company.</li>
++        <li>Its stock sensitivity is now often tied to OCI growth, AI demand, and large enterprise backlog trends.</li>
++        <li>Recent headlines suggest accelerated cloud momentum, but also higher execution and valuation expectations.</li>
++      </ul>
++      <p class="note">Educational overview only — not financial advice.</p>
++    </section>
++
++    <section class="card">
++      <h2>Recent News & Events</h2>
++      <div class="timeline">
++        <article>
++          <h3>March 10, 2026 — Strong fiscal Q3 2026 results</h3>
++          <p>Oracle reported Q3 FY26 results with strong cloud growth, including very high growth in cloud infrastructure (IaaS). Management also described AI and multicloud demand as a key growth driver.</p>
++        </article>
++        <article>
++          <h3>March 2026 — Guidance confidence raised</h3>
++          <p>Following earnings, reports highlighted stronger forward revenue expectations tied to cloud/AI workloads. The stock reacted positively as investors priced in faster top-line growth.</p>
++        </article>
++        <article>
++          <h3>2025 to early 2026 — TikTok/Oracle partnership developments</h3>
++          <p>Multiple outlets reported Oracle's role in U.S. TikTok infrastructure and governance discussions. While outside Oracle's core software franchise, these headlines can affect sentiment around Oracle's strategic data platform role.</p>
++        </article>
++      </div>
++    </section>
++
++    <section class="card grid">
++      <div>
++        <h2>How These Events Can Affect the Market</h2>
++        <ol>
++          <li><strong>Cloud growth repricing:</strong> If Oracle sustains faster OCI growth, investors may assign higher valuation multiples (especially versus slower legacy software peers).</li>
++          <li><strong>AI capex narrative:</strong> Bigger AI demand can support revenue, but it can also imply heavier capex/lease commitments and margin scrutiny.</li>
++          <li><strong>Competitive positioning:</strong> Wins in multicloud database and regulated enterprise workloads can improve confidence against hyperscaler competition.</li>
++          <li><strong>Event-driven volatility:</strong> Policy-sensitive headlines (like TikTok) can drive short-term stock moves even if long-term earnings impact is uncertain.</li>
++        </ol>
++      </div>
++      <aside>
++        <h2>Watchlist Metrics</h2>
++        <ul>
++          <li>OCI revenue growth rate (YoY)</li>
++          <li>Cloud RPO/backlog trends</li>
++          <li>Operating margin trend as infrastructure scales</li>
++          <li>Management FY guidance changes</li>
++          <li>Large partnership / policy headlines</li>
++        </ul>
++      </aside>
++    </section>
++
++    <section class="card">
++      <h2>Primary Sources</h2>
++      <ul>
++        <li><a href="https://investor.oracle.com/investor-news/news-details/2026/Oracle-Announces-Fiscal-Year-2026-Third-Quarter-Financial-Results/default.aspx" target="_blank" rel="noopener noreferrer">Oracle Investor Relations: Fiscal Q3 2026 Results (March 10, 2026)</a></li>
++        <li><a href="https://blogs.oracle.com/ceo/from-the-q3-earnings-call" target="_blank" rel="noopener noreferrer">Oracle CEO Blog: Q3 Earnings Call Commentary</a></li>
++        <li><a href="https://www.axios.com/2026/03/10/oracle-stock-ai-cloud-computing" target="_blank" rel="noopener noreferrer">Axios: Oracle stock reaction to AI/cloud forecast</a></li>
++        <li><a href="https://www.cnbc.com/2025/09/16/tiktok-bytedance-oracle-china.html" target="_blank" rel="noopener noreferrer">CNBC/Reuters: Oracle and TikTok infrastructure developments</a></li>
++      </ul>
++    </section>
++  </main>
++</body>
++</html>
+ 
+EOF
+)
