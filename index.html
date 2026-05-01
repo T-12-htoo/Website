@@ -1,87 +1,273 @@
- (cd "$(git rev-parse --show-toplevel)" && git apply --3way <<'EOF' 
-diff --git a/index.html b/index.html
-new file mode 100644
-index 0000000000000000000000000000000000000000..67de1b1fc6dd0a066dcfcee0b9d8d767d1433bc8
---- /dev/null
-+++ b/index.html
-@@ -0,0 +1,77 @@
-+<!doctype html>
-+<html lang="en">
-+<head>
-+  <meta charset="UTF-8" />
-+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-+  <title>Oracle (ORCL) Stock Briefing</title>
-+  <link rel="stylesheet" href="styles.css" />
-+</head>
-+<body>
-+  <header class="hero">
-+    <h1>Oracle (NYSE: ORCL) Stock Briefing</h1>
-+    <p>Recent business events, what they may mean for investors, and market context.</p>
-+  </header>
-+
-+  <main>
-+    <section class="card">
-+      <h2>Quick Snapshot</h2>
-+      <ul>
-+        <li>Oracle is increasingly a cloud and infrastructure company.</li>
-+        <li>Its stock sensitivity is now often tied to OCI growth, AI demand, and large enterprise backlog trends.</li>
-+        <li>Recent headlines suggest accelerated cloud momentum, but also higher execution and valuation expectations.</li>
-+      </ul>
-+      <p class="note">Educational overview only — not financial advice.</p>
-+    </section>
-+
-+    <section class="card">
-+      <h2>Recent News & Events</h2>
-+      <div class="timeline">
-+        <article>
-+          <h3>March 10, 2026 — Strong fiscal Q3 2026 results</h3>
-+          <p>Oracle reported Q3 FY26 results with strong cloud growth, including very high growth in cloud infrastructure (IaaS). Management also described AI and multicloud demand as a key growth driver.</p>
-+        </article>
-+        <article>
-+          <h3>March 2026 — Guidance confidence raised</h3>
-+          <p>Following earnings, reports highlighted stronger forward revenue expectations tied to cloud/AI workloads. The stock reacted positively as investors priced in faster top-line growth.</p>
-+        </article>
-+        <article>
-+          <h3>2025 to early 2026 — TikTok/Oracle partnership developments</h3>
-+          <p>Multiple outlets reported Oracle's role in U.S. TikTok infrastructure and governance discussions. While outside Oracle's core software franchise, these headlines can affect sentiment around Oracle's strategic data platform role.</p>
-+        </article>
-+      </div>
-+    </section>
-+
-+    <section class="card grid">
-+      <div>
-+        <h2>How These Events Can Affect the Market</h2>
-+        <ol>
-+          <li><strong>Cloud growth repricing:</strong> If Oracle sustains faster OCI growth, investors may assign higher valuation multiples (especially versus slower legacy software peers).</li>
-+          <li><strong>AI capex narrative:</strong> Bigger AI demand can support revenue, but it can also imply heavier capex/lease commitments and margin scrutiny.</li>
-+          <li><strong>Competitive positioning:</strong> Wins in multicloud database and regulated enterprise workloads can improve confidence against hyperscaler competition.</li>
-+          <li><strong>Event-driven volatility:</strong> Policy-sensitive headlines (like TikTok) can drive short-term stock moves even if long-term earnings impact is uncertain.</li>
-+        </ol>
-+      </div>
-+      <aside>
-+        <h2>Watchlist Metrics</h2>
-+        <ul>
-+          <li>OCI revenue growth rate (YoY)</li>
-+          <li>Cloud RPO/backlog trends</li>
-+          <li>Operating margin trend as infrastructure scales</li>
-+          <li>Management FY guidance changes</li>
-+          <li>Large partnership / policy headlines</li>
-+        </ul>
-+      </aside>
-+    </section>
-+
-+    <section class="card">
-+      <h2>Primary Sources</h2>
-+      <ul>
-+        <li><a href="https://investor.oracle.com/investor-news/news-details/2026/Oracle-Announces-Fiscal-Year-2026-Third-Quarter-Financial-Results/default.aspx" target="_blank" rel="noopener noreferrer">Oracle Investor Relations: Fiscal Q3 2026 Results (March 10, 2026)</a></li>
-+        <li><a href="https://blogs.oracle.com/ceo/from-the-q3-earnings-call" target="_blank" rel="noopener noreferrer">Oracle CEO Blog: Q3 Earnings Call Commentary</a></li>
-+        <li><a href="https://www.axios.com/2026/03/10/oracle-stock-ai-cloud-computing" target="_blank" rel="noopener noreferrer">Axios: Oracle stock reaction to AI/cloud forecast</a></li>
-+        <li><a href="https://www.cnbc.com/2025/09/16/tiktok-bytedance-oracle-china.html" target="_blank" rel="noopener noreferrer">CNBC/Reuters: Oracle and TikTok infrastructure developments</a></li>
-+      </ul>
-+    </section>
-+  </main>
-+</body>
-+</html>
- 
-EOF
-)
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Oracle Stock Analysis</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #f4f6f8;
+      color: #222;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #b00000;
+      color: white;
+      padding: 30px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 36px;
+      margin-bottom: 8px;
+    }
+
+    nav {
+      background: #222;
+      padding: 12px;
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 25px auto;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: white;
+      padding: 22px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    }
+
+    .card h2 {
+      color: #b00000;
+      margin-bottom: 12px;
+    }
+
+    .metric {
+      font-size: 28px;
+      font-weight: bold;
+      color: #111;
+    }
+
+    .positive {
+      color: green;
+    }
+
+    .negative {
+      color: red;
+    }
+
+    section {
+      margin-bottom: 30px;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    .news-item,
+    .event-item {
+      border-bottom: 1px solid #ddd;
+      padding: 12px 0;
+    }
+
+    .news-item:last-child,
+    .event-item:last-child {
+      border-bottom: none;
+    }
+
+    .tag {
+      display: inline-block;
+      background: #eee;
+      padding: 5px 10px;
+      border-radius: 20px;
+      font-size: 13px;
+      margin-top: 8px;
+    }
+
+    footer {
+      text-align: center;
+      background: #222;
+      color: white;
+      padding: 18px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Oracle Corporation Stock Analysis</h1>
+    <p>Ticker Symbol: ORCL | Industry: Cloud Computing, Software, Database Technology</p>
+  </header>
+
+  <nav>
+    <a href="#overview">Overview</a>
+    <a href="#financials">Financials</a>
+    <a href="#analysis">Analysis</a>
+    <a href="#news">News</a>
+    <a href="#events">Events</a>
+  </nav>
+
+  <main class="container">
+
+    <section id="overview" class="card">
+      <h2>Company Overview</h2>
+      <p>
+        Oracle Corporation is a major technology company known for database software,
+        enterprise cloud services, artificial intelligence infrastructure, and business applications.
+        Investors often watch Oracle because of its cloud growth, AI partnerships, earnings reports,
+        and competition with companies such as Microsoft, Amazon, Google, and Salesforce.
+      </p>
+    </section>
+
+    <section id="financials">
+      <div class="grid">
+        <div class="card">
+          <h2>Current Price</h2>
+          <p class="metric">$000.00</p>
+          <p>Replace this with live stock API data.</p>
+        </div>
+
+        <div class="card">
+          <h2>Daily Change</h2>
+          <p class="metric positive">+0.00%</p>
+          <p>Shows how much ORCL moved today.</p>
+        </div>
+
+        <div class="card">
+          <h2>Market Cap</h2>
+          <p class="metric">$000B</p>
+          <p>Total market value of Oracle.</p>
+        </div>
+
+        <div class="card">
+          <h2>P/E Ratio</h2>
+          <p class="metric">00.00</p>
+          <p>Helps compare Oracle’s valuation to competitors.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="analysis" class="card">
+      <h2>Stock Analysis</h2>
+      <p>
+        Oracle’s stock performance is strongly connected to cloud revenue growth,
+        artificial intelligence demand, database software strength, and enterprise technology spending.
+      </p>
+
+      <h3>Strengths</h3>
+      <ul>
+        <li>Strong position in enterprise database software.</li>
+        <li>Growing cloud infrastructure business.</li>
+        <li>Long-term corporate customers and recurring revenue.</li>
+        <li>Potential benefit from AI infrastructure demand.</li>
+      </ul>
+
+      <h3>Risks</h3>
+      <ul>
+        <li>Strong competition from Microsoft Azure, Amazon AWS, and Google Cloud.</li>
+        <li>High expectations may pressure the stock if growth slows.</li>
+        <li>Large technology investments can affect profit margins.</li>
+        <li>Interest rates and market conditions can affect tech stock valuations.</li>
+      </ul>
+    </section>
+
+    <section id="news" class="card">
+      <h2>Recent News</h2>
+
+      <div class="news-item">
+        <h3>Oracle Cloud and AI Growth</h3>
+        <p>
+          Investors are watching Oracle’s cloud infrastructure growth and its role in supporting AI workloads.
+        </p>
+        <span class="tag">Cloud / AI</span>
+      </div>
+
+      <div class="news-item">
+        <h3>Earnings Report</h3>
+        <p>
+          Oracle’s quarterly earnings reports are important because they show revenue growth,
+          cloud performance, profit margins, and future guidance.
+        </p>
+        <span class="tag">Earnings</span>
+      </div>
+
+      <div class="news-item">
+        <h3>Partnerships and Contracts</h3>
+        <p>
+          Large enterprise contracts and partnerships can influence investor confidence in Oracle’s future growth.
+        </p>
+        <span class="tag">Business Events</span>
+      </div>
+    </section>
+
+    <section id="events" class="card">
+      <h2>Important Company Events</h2>
+
+      <div class="event-item">
+        <h3>Quarterly Earnings Release</h3>
+        <p>
+          Earnings reports can cause major movement in Oracle’s stock price depending on results and guidance.
+        </p>
+      </div>
+
+      <div class="event-item">
+        <h3>Oracle CloudWorld</h3>
+        <p>
+          Oracle’s major company event where it announces updates about cloud, AI, database technology,
+          and enterprise software products.
+        </p>
+      </div>
+
+      <div class="event-item">
+        <h3>Product Launches</h3>
+        <p>
+          New AI, cloud, and database products can affect how investors view Oracle’s future growth.
+        </p>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Investment Summary</h2>
+      <p>
+        Oracle can be viewed as a mature technology company with growth potential from cloud computing
+        and artificial intelligence. A strong investment case depends on whether Oracle can continue
+        expanding cloud revenue, winning large enterprise customers, and competing successfully against
+        larger cloud providers.
+      </p>
+      <p><strong>Note:</strong> This website is for educational purposes only and is not financial advice.</p>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>Oracle Stock Analysis Website | Educational Project</p>
+  </footer>
+
+</body>
+</html>
